@@ -41,7 +41,7 @@ function ReadPostCtrl($scope, $http, $routeParams) {
 function EditPostCtrl($scope, $http, $location, $routeParams) {
 	$scope.form = {};
 	$http.get('/api/post/' + $routeParams.id).
-		success(function(data)) {
+		success(function(data) {
 			$scope.form = data.post;
 		});
 
