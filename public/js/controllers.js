@@ -54,11 +54,20 @@ function EditPostCtrl($scope, $http, $location, $routeParams) {
 }	
 				
 
+function DeletePostCtrl($scope, $http, $location, $routeParams) {
+	$http.get('/api/post/' + $routeParams.id).
+		success(function(data) {
+			$scope.post = data.post;
+		});
 
-function MyCtrl1() {}
-MyCtrl1.$inject = [];
+	$scope.deletePost = function () {
+		$http.delete('/api/post/' + $routeParams.id).
+			success(function(data) {
+				$location.url('/');
+			});
+	}
 
-
-function MyCtrl2() {
+	$scope.home = function () {
+		$location.url('/');
+	};
 }
-MyCtrl2.$inject = [];
