@@ -5,7 +5,8 @@
 
 var express = require('express'),
   routes = require('./routes'),
-  api = require('./routes/api');
+  api = require('./routes/api'),
+  db = require('./models/db');
 
 var app = module.exports = express();
 
@@ -46,7 +47,7 @@ app.delete('/api/post/:id', api.deletePost);
 app.get('*', routes.index);
 
 // Start server
-var port = process.env.PORT || 5000;
+var port = process.env.PORT || 3000;
 app.listen(port, function(){
   console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
 });
