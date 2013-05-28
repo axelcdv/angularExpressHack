@@ -9,3 +9,7 @@ Initial release corresponding to the blogpost cited above. Working app with pseu
 v0.11
 Adapted to heroku:
  - added Procfile
+
+v0.12
+MongoDB support (instead of in-memory map)
+Running on port determined by process.env.PORT
