@@ -5,7 +5,8 @@
 
 var express = require('express'),
   routes = require('./routes'),
-  api = require('./routes/api');
+  api = require('./routes/api'),
+  db = require('./models/db');
 
 var app = module.exports = express();
 
